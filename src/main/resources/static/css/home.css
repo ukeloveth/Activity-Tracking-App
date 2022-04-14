@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 800px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(100, 100, 244);
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+    padding: 0 40px;
+
+}
+.homebg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 2px 8px;
+    height: 30px;
+}
+
+.navDiv{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.homePage{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+
+a:link{
+    text-decoration:none;
+
+}
+
+.login{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: wheat;
+}
+
+.signUp{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+a:hover{
+    color: pink;
+}
+
+#love-section{
+    background-image: url("./Images/istockphoto-1346727107-612x612.jpeg");
+    height: 700px ;
+}
+
+.footer{
+    height: 70px;
+    background-color:rgb(191, 225, 191);
+    line-height: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.copy{
+    /*font: white;*/
+
+}
+
+.image1{
+    width: 30px;
+}
+
+
