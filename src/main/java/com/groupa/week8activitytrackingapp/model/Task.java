@@ -6,9 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -17,17 +15,18 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class Task {
+
     @Id
     @GeneratedValue
     private Long id;
     private String title;
     private String description;
+    @Enumerated(EnumType.STRING)
     private TaskStatus status;
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDate completedAt;
-
 
 }
