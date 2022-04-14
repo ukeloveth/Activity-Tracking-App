@@ -9,5 +9,6 @@ public interface TaskService {
     List<Task> getAllTasks();
     Task findTaskByTitle(String title);
     Task getTaskById(long id);
-    Task editTask(Task task);
+
+    Task editTask(Long id, String title, String description, String status);
 }

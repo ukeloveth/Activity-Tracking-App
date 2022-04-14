@@ -1,5 +1,4 @@
 package com.groupa.week8activitytrackingapp.controllers;
-
 import com.groupa.week8activitytrackingapp.dtos.SearchDto;
 import com.groupa.week8activitytrackingapp.dtos.TaskDto;
 import com.groupa.week8activitytrackingapp.model.Task;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/")
 public class TaskController {
+
     private final TaskServiceImpl taskService;
 
 
@@ -22,12 +22,15 @@ public class TaskController {
 
     @GetMapping("/tasks")
     public String home(Model model) {
+
         TaskDto task = new TaskDto();
         SearchDto searchDto = new SearchDto();
+
         var taskList = taskService.getAllTasks();
         model.addAttribute("list",taskList);
         model.addAttribute("taskObject", task);
         model.addAttribute("searchDto", searchDto);
+
         return "tasks";
     }
 
@@ -58,10 +61,23 @@ public class TaskController {
         return "search_task";
 
     }
-    @GetMapping("/tasks/{id}")
-    public String editTask(@PathVariable Long id, Model model) {
-        model.addAttribute("task", taskService.getTaskById(id));
-        return "tasks";
+
+
+    @PutMapping("/tasks/edit/{id}")
+    @ResponseBody
+    public TaskEditResponse editTask(@PathVariable Long id, @RequestParam("title")String title,
+                                     @RequestParam("description")String description,
+                                     @RequestParam("status")String status, Model model) {
+
+
+        taskService.editTask(id, title, description, status);
+
+        TaskEditResponse taskEditResponse = new TaskEditResponse();
+
+        taskEditResponse.setSuccess(true);
+        taskEditResponse.setMessage("Successful!");
+
+        return taskEditResponse;
     }
 
 
