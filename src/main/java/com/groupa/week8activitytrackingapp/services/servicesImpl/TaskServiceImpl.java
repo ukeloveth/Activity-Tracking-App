@@ -31,8 +31,8 @@ public class TaskServiceImpl implements TaskService {
     }
     @Override
     public List<Task> getAllTasks() {
-        taskList = taskRepository.findAll();
-        return taskList;
+
+        return taskRepository.findAll();
     }
 
     @Override
@@ -48,7 +48,23 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task editTask(Task task) {
+    public Task editTask(Long id, String title, String description, String status) {
+        Task task = taskRepository.findTaskById(id);
+
+        if ( status!=null && !status.isEmpty() ){
+            status = status.toUpperCase();
+            TaskStatus taskStatus = TaskStatus.valueOf(status);
+            task.setStatus(taskStatus);
+        }
+
+        if ( title!=null && !title.isEmpty() ){
+            task.setTitle(title);
+        }
+
+        if ( description!=null && !description.isEmpty() ){
+            task.setDescription(description);
+        }
+
         return taskRepository.save(task);
     }
 
