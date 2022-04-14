@@ -11,4 +11,6 @@ public interface TaskService {
     Task getTaskById(long id);
 
     Task editTask(Long id, String title, String description, String status);
+    void deleteTask (Long id);
+
 }
