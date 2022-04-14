@@ -82,6 +82,12 @@ public class TaskController {
         return taskEditResponse;
     }
 
+    @GetMapping("/tasks/delete/{id}")
+    public String delete (@PathVariable(value = "id") long id) {
+        taskService.deleteTask(id);
+
+        return "";
+    }
 
 }
 
