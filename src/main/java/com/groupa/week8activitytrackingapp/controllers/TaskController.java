@@ -1,8 +1,6 @@
 package com.groupa.week8activitytrackingapp.controllers;
-
-import com.groupa.week8activitytrackingapp.dto.SearchDto;
-import com.groupa.week8activitytrackingapp.dto.TaskDto;
-import com.groupa.week8activitytrackingapp.dto.TaskEditResponse;
+import com.groupa.week8activitytrackingapp.dtos.SearchDto;
+import com.groupa.week8activitytrackingapp.dtos.TaskDto;
 import com.groupa.week8activitytrackingapp.model.Task;
 import com.groupa.week8activitytrackingapp.services.servicesImpl.TaskServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

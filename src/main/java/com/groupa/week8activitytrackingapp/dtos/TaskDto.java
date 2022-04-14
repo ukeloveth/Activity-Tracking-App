@@ -1,4 +1,4 @@
-package com.groupa.week8activitytrackingapp.dto;
+package com.groupa.week8activitytrackingapp.dtos;
 
 
 import lombok.Data;
