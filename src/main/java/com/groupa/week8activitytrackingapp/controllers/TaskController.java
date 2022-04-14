@@ -54,13 +54,14 @@ public class TaskController {
     }
 
     @GetMapping("/tasks/{title}")
-    public String taskByTitle(@ModelAttribute("searchDto") SearchDto searchDto, Model model) {
+    public String findTask(@ModelAttribute("searchDto") SearchDto searchDto, Model model) {
         TaskDto task = new TaskDto();
+        System.out.println(searchDto.toString());
+
         Task searchTask = taskService.findTaskByTitle(searchDto.getTitle());
         model.addAttribute("searchFor",searchTask);
         model.addAttribute("taskObject", task);
         return "search_task";
-
     }
 
 
